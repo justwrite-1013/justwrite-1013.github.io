@@ -6,222 +6,60 @@
     <title>我的故事 | 东方意境</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Noto Serif SC', serif; /* 衬线字体增加文学感和东方意境 */
-            color: #4a5568; /* 柔和的深灰色文字，避免纯黑的突兀 */
-            overflow-x: hidden;
-            background-color: #fdfbf7; /* 基础底色：极浅的暖黄色 */
-        }
-
-        /* 核心：水彩晕染、朦胧光影背景 */
-        .watercolor-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            /* 使用多重径向渐变模拟水彩晕染 */
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(240, 230, 200, 0.6) 0%, transparent 50%), /* 低饱和淡黄 */
-                radial-gradient(circle at 85% 30%, rgba(200, 220, 240, 0.5) 0%, transparent 50%), /* 亮蓝白色调 */
-                radial-gradient(circle at 50% 80%, rgba(220, 210, 230, 0.4) 0%, transparent 60%), /* 微微的紫灰晕染 */
-                radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 40%); /* 逆光的高光感 */
-            filter: blur(60px); /* 强烈的模糊产生氤氲、浪漫朦胧的效果 */
-            animation: breathe 20s infinite alternate ease-in-out; /* 缓慢的呼吸动画增加生机 */
-        }
-
-        /* 背景缓慢流动的动画 */
-        @keyframes breathe {
-            0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
-            50% { transform: scale(1.05) translate(2%, 2%); opacity: 1; }
-            100% { transform: scale(1) translate(-1%, -1%); opacity: 0.8; }
-        }
-
-        /* 精致的毛玻璃效果卡片 */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.45); /* 透明白色 */
-            backdrop-filter: blur(12px); /* 背景模糊 */
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px 0 rgba(100, 110, 140, 0.08); /* 极柔和的阴影 */
-            transition: all 0.4s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px 0 rgba(100, 110, 140, 0.12);
-            background: rgba(255, 255, 255, 0.55);
-        }
-
-        /* 文章内容展开过渡效果 */
-        .post-content {
-            display: none; /* 在主页中隐藏详细内容 */
-        }
-
-        /* 阅读更多按钮的诗意样式 */
-        .read-more-btn {
-            color: #718096;
-            transition: color 0.3s ease;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .read-more-btn::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #718096;
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-
-        .read-more-btn:hover {
-            color: #4a5568;
-        }
-
-        .read-more-btn:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        /* 顶部导航或标题栏渐变 */
-        .header-title {
-            background: linear-gradient(to right, #64748b, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0px 2px 10px rgba(255,255,255,0.5);
-        }
-    </style>
+    <!-- 引入刚刚创建的独立样式文件 -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body class="antialiased min-h-screen flex flex-col relative">
 
-    <!-- 动态水彩晕染背景层 -->
+    <!-- 背景 -->
     <div class="watercolor-bg"></div>
 
-    <!-- 顶部 -->
-    <header class="pt-16 pb-8 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-semibold tracking-widest header-title mb-3">
-            一 隅
-        </h1>
-        <p class="text-sm md:text-base text-gray-500 tracking-wider font-light">
-            光影斑斓，心之所向
-        </p>
+    <!-- 头部区域 -->
+    <header class="pt-20 pb-12 text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4 header-title tracking-widest">浮 生 若 梦</h1>
+        <p class="text-gray-500 font-light tracking-wide text-sm md:text-base">温柔透明 · 浪漫朦胧 · 故事感</p>
     </header>
 
-    <!-- 主要内容区：历程时间线 -->
-    <main class="flex-grow container mx-auto px-4 md:px-8 max-w-3xl relative z-10 pb-20">
+    <!-- 文章列表区 -->
+    <main class="flex-grow container mx-auto px-4 md:px-8 max-w-3xl relative z-10">
         
-        <!-- 文章列表 -->
-        <div class="space-y-12 mt-8">
-
-            <!-- 文章 1 -->
-            <article class="glass-card p-6 md:p-8 relative">
-                <!-- 日期标签 -->
-                <div class="absolute -top-4 left-6 bg-white/70 backdrop-blur-sm px-4 py-1 rounded-full text-xs text-gray-500 border border-white/50 shadow-sm flex items-center">
-                    <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    2026年7月19日
+        <div class="space-y-12 pb-20">
+            <!-- 第一篇文章卡片 -->
+            <article class="glass-card p-8 md:p-10 relative overflow-hidden group">
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
+                    <h2 class="text-2xl font-medium text-gray-800 tracking-wide">初雪与晚风的记忆</h2>
+                    <time class="text-xs text-gray-400 mt-2 md:mt-0 font-light tracking-wider">2026.07.19</time>
                 </div>
-                
-                <!-- 点击标题也可以跳转 -->
-                <a href="./posts/first-snow/index.html" class="block group mt-2 mb-4">
-                    <h2 class="text-2xl font-medium text-gray-700 leading-snug group-hover:text-gray-900 transition-colors">初雪与晚风的记忆</h2>
-                </a>
-                
-                <!-- 摘要/开头 -->
-                <div class="text-gray-600 leading-relaxed font-light text-justify text-sm md:text-base">
-                    <p>
-                        那是今年冬天的第一场雪，下得很安静。我坐在窗前，看着天色一点点暗下来，天际边缘泛起一种近乎透明的蓝白色调。屋内的灯光呈现出低饱和度的暖黄，在玻璃窗上晕染开来...
-                    </p>
+                <div class="text-gray-600 font-light leading-relaxed text-justify mb-6 line-clamp-3">
+                    那是今年冬天的第一场雪，下得很安静。我坐在窗前，看着天色一点点暗下来，天际边缘泛起一种近乎透明的蓝白色调。屋内的灯光呈现出低饱和度的暖黄，在玻璃窗上晕染开来，像是某种水彩颜料不经意间滴落在了打湿的画纸上...
                 </div>
-
-                <!-- 完整内容在这里被移除了，因为它将存在于单独的页面中 -->
-
-                <!-- 操作区 -->
-                <div class="mt-6 flex justify-between items-center">
-                    <div class="flex gap-2">
-                        <span class="text-xs bg-gray-100/50 text-gray-500 px-2 py-1 rounded">随笔</span>
-                        <span class="text-xs bg-gray-100/50 text-gray-500 px-2 py-1 rounded">冬日</span>
-                    </div>
-                    <!-- 改为真实的链接跳转 -->
-                    <a href="./posts/first-snow/index.html" class="read-more-btn text-sm font-medium tracking-wide">
-                        阅 读 全 文
-                    </a>
+                <div class="text-right">
+                    <!-- 指向新建文件夹中的 index.html -->
+                    <a href="./posts/first-snow/index.html" class="read-more-btn text-sm font-medium tracking-widest cursor-pointer">阅读全文</a>
                 </div>
             </article>
 
-            <!-- 文章 2 -->
-            <article class="glass-card p-6 md:p-8 relative">
-                <div class="absolute -top-4 left-6 bg-white/70 backdrop-blur-sm px-4 py-1 rounded-full text-xs text-gray-500 border border-white/50 shadow-sm flex items-center">
-                    <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    2026年6月10日
+            <!-- 第二篇文章卡片 (示例) -->
+            <article class="glass-card p-8 md:p-10 relative overflow-hidden group">
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
+                    <h2 class="text-2xl font-medium text-gray-800 tracking-wide">夏日氤氲的光影</h2>
+                    <time class="text-xs text-gray-400 mt-2 md:mt-0 font-light tracking-wider">2026.06.12</time>
                 </div>
-                
-                <a href="./posts/after-rain/index.html" class="block group mt-2 mb-4">
-                    <h2 class="text-2xl font-medium text-gray-700 leading-snug group-hover:text-gray-900 transition-colors">雨后天晴的渐变色</h2>
-                </a>
-                
-                <div class="text-gray-600 leading-relaxed font-light text-justify text-sm md:text-base">
-                    <p>
-                        连绵了半个月的阴雨终于停了。傍晚散步时，抬头看到天空呈现出一种不可思议的渐变色。从地平线上的淡金色，向上慢慢晕染成粉紫，再过渡到头顶那片清澈见底的亮蓝...
-                    </p>
+                <div class="text-gray-600 font-light leading-relaxed text-justify mb-6 line-clamp-3">
+                    阳光透过树叶的缝隙洒落，在青石板上留下斑驳的光影。空气中弥漫着水汽，带着一丝淡淡的青草香。远处的山峦在雾气中若隐若现，宛如一幅徐徐展开的泼墨山水画...
                 </div>
-
-                <div class="mt-6 flex justify-between items-center">
-                    <div class="flex gap-2">
-                        <span class="text-xs bg-gray-100/50 text-gray-500 px-2 py-1 rounded">风景</span>
-                    </div>
-                    <a href="./posts/after-rain/index.html" class="read-more-btn text-sm font-medium tracking-wide">
-                        阅 读 全 文
-                    </a>
+                <div class="text-right">
+                    <a href="#" class="read-more-btn text-sm font-medium tracking-widest cursor-pointer">阅读全文</a>
                 </div>
             </article>
-
-             <!-- 文章 3 (简短测试) -->
-             <article class="glass-card p-6 md:p-8 relative">
-                <div class="absolute -top-4 left-6 bg-white/70 backdrop-blur-sm px-4 py-1 rounded-full text-xs text-gray-500 border border-white/50 shadow-sm flex items-center">
-                    <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    2026年5月22日
-                </div>
-                
-                <a href="./posts/hello-world/index.html" class="block group mt-2 mb-4">
-                    <h2 class="text-2xl font-medium text-gray-700 leading-snug group-hover:text-gray-900 transition-colors">Hello World, 属于我的空间</h2>
-                </a>
-                
-                <div class="text-gray-600 leading-relaxed font-light text-justify text-sm md:text-base">
-                    <p>
-                        终于，在 GitHub Pages 上建立了自己的小角落。第一篇文章，总是不知道该写些什么好。就让它成为一个开始的标记吧。
-                    </p>
-                </div>
-
-                <div class="mt-6 flex justify-between items-center">
-                    <div class="flex gap-2">
-                        <span class="text-xs bg-gray-100/50 text-gray-500 px-2 py-1 rounded">建站</span>
-                    </div>
-                    <a href="./posts/hello-world/index.html" class="read-more-btn text-sm font-medium tracking-wide">
-                        阅 读 全 文
-                    </a>
-                </div>
-            </article>
-
         </div>
+
     </main>
 
-    <!-- 底部版权 -->
-    <footer class="py-6 text-center text-xs text-gray-400 relative z-10 mt-auto">
-        <p>© 2026 我的故事. 浮生若梦，为欢几何。</p>
+    <!-- 页脚 -->
+    <footer class="py-8 text-center text-xs text-gray-400 relative z-10 mt-auto border-t border-gray-200/30">
+        <p>© 2026 我的故事. 逆光之中，皆是风景。</p>
     </footer>
 
-    <!-- 移除了之前用于展开文章的 JavaScript -->
 </body>
 </html>
