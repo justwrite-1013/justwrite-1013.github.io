@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>初雪与晚风的记忆 | 浮生若梦</title>
+    <title>Hello World | 浮生若梦</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- 引入根目录的独立样式文件，使用 ../../ 回退两级目录 -->
@@ -28,7 +28,7 @@
         <article class="glass-card p-8 md:p-12 relative mt-4">
             
             <header class="mb-10 text-center border-b border-gray-200/50 pb-8">
-                <h1 class="text-3xl md:text-4xl font-medium mb-4 text-gray-800 leading-tight">初雪与晚风的记忆</h1>
+                <h1 class="text-3xl md:text-4xl font-medium mb-4 text-gray-800 leading-tight">Hello World</h1>
                 <div class="text-sm text-gray-500 flex justify-center items-center gap-4 tracking-widest">
                     <span>2026.07.19</span>
                     <span>·</span>
@@ -39,19 +39,36 @@
             <!-- 文章内容 -->
             <div class="article-content text-gray-700 font-light text-justify text-base md:text-lg">
                 <p>
-                    那是今年冬天的第一场雪，下得很安静。我坐在窗前，看着天色一点点暗下来，天际边缘泛起一种近乎透明的蓝白色调。屋内的灯光呈现出低饱和度的暖黄，在玻璃窗上晕染开来...
+                    测试。第一次搭建博客，网页设计+代码由 Gemini 3.1 Pro 写出，Prompt 以及博客搭建步骤如下。
                 </p>
                 <p>
-                    像是某种水彩颜料不经意间滴落在了打湿的画纸上，边缘模糊，却透着温柔。那一刻，仿佛所有的喧嚣都被这片氤氲的氛围吸收了。
+                    参考文献：搭建个人博客系列--(2) 动手搭建自己的第一个博客站点 https://zhuanlan.zhihu.com/p/1918804368607675274
                 </p>
                 <p>
-                    我想起很久以前看过的一部电影，也是这样的光影。人在时间的长河里，总是容易被一些细微的瞬间击中。或许是逆光下飞舞的尘埃，或许是某人转身时裙摆的弧度。这些碎片拼凑成了我们所谓的“故事感”。
+                    步骤：
+                    1. 创建 github repository，起一个好看网址名。
+                    2. 利用 Gemini 3.1 Pro Canvas 设计网站，Prompt: 我想要用 github pages 做一个个人博客，我已经创建了一个 repository，我希望博客的设计风格是这样的：（按自己喜欢的设计风格形容填写），所有页面保持一样的风格。要有一个主页可以预览日期历程，内容开头，点击阅读全文时可以进到另一页，而不是在同一页阅览。以及，我希望能在github 里把每个文章分在不同的文件夹里，方便书写。请帮我把他们全都分开好，并连着file的创建步骤，一起打包给我。
+                    3. Gemini 推荐结构：
+                        justwrite-1013.github.io/
+                        │
+                        ├── index.html           (主页：文章列表)
+                        ├── style.css            (存放共用的水彩背景和样式，这样所有页面都能保持一致的风格)
+                        │
+                        ├── posts/               (你可以建一个文件夹专门放文章)
+                        │   ├── hello-world/
+                        │   │   └── index.html   (测试文章的内容)
+                        │   │
+                        │   ├── first-post/
+                        │   │   └── index.html   (第一篇文章的内容)
+                        │   │
+                        │   └── second-post/
+                        │       └── index.html   (第二篇文章的内容)
+                    4. 创建样式文件：在仓库主页，点击绿色的 Add file 按钮，选择 Create new file。在文件名的输入框中输入：style.css，将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。
+                    5. 创建主页：回到仓库，Add file -> Create new file，文件名：index.html，将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。
+                    6. 创建文章详情页：回到仓库主页，点击 Add file -> Create new file。在文件名的输入框中，依次输入：posts/，然后输入hello-world/，最后输入 index.html（GitHub 会自动将路径折叠为文件夹结构）。最终顶部显示的文件路径应为：posts/hello-world/index.html。将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。
                 </p>
                 <p>
-                    在这个角落记录下这些，不是为了证明什么，只是想给这些稍纵即逝的美丽，寻找一个可以降落的透明容器。
-                </p>
-                <p>
-                    不知过了多久，窗外的雪停了。路灯下，积雪泛着微光。晚风轻轻吹过，树枝上簌簌地落下一阵银白。这是属于冬日特有的宁静，清冷，却又让人觉得心安。
+                    完成这三步后，等待几分钟让 GitHub Pages 重新部署，你的博客就能通过 https://(网站名).github.io 正常访问，并且点击“阅读全文”会平滑跳转到独立页面。以后写新文章，只需要重复第6步（更改文件夹名和内容），并在第5步的主页里添加一个指向新文章的卡片即可。
                 </p>
             </div>
             
@@ -59,7 +76,7 @@
     </main>
 
     <footer class="py-6 text-center text-xs text-gray-400 relative z-10 mt-auto">
-        <p>© 2026 我的故事. 逆光之中，皆是风景。</p>
+        <p>© 2026 Justwrite. 眼中有爱，看什么都浪漫。</p>
     </footer>
 
 </body>
