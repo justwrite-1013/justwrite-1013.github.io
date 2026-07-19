@@ -46,25 +46,25 @@
                 </p>
                 <p>
                     步骤：
-                    1. 创建 github repository，起一个好看网址名。
-                    2. 利用 Gemini 3.1 Pro Canvas 设计网站，Prompt: 我想要用 github pages 做一个个人博客，我已经创建了一个 repository，我希望博客的设计风格是这样的：（按自己喜欢的设计风格形容填写），所有页面保持一样的风格。要有一个主页可以预览日期历程，内容开头，点击阅读全文时可以进到另一页，而不是在同一页阅览。以及，我希望能在github 里把每个文章分在不同的文件夹里，方便书写。请帮我把他们全都分开好，并连着file的创建步骤，一起打包给我。
-                    3. Gemini 推荐结构：
-                        justwrite-1013.github.io/
-                        │
-                        ├── index.html           (主页：文章列表)
-                        ├── style.css            (存放共用的水彩背景和样式，这样所有页面都能保持一致的风格)
-                        │
-                        ├── posts/               (你可以建一个文件夹专门放文章)
-                        │   ├── hello-world/
-                        │   │   └── index.html   (测试文章的内容)
-                        │   │
-                        │   ├── first-post/
-                        │   │   └── index.html   (第一篇文章的内容)
-                        │   │
-                        │   └── second-post/
-                        │       └── index.html   (第二篇文章的内容)
-                    4. 创建样式文件：在仓库主页，点击绿色的 Add file 按钮，选择 Create new file。在文件名的输入框中输入：style.css，将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。
-                    5. 创建主页：回到仓库，Add file -> Create new file，文件名：index.html，将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。
+                    1. 创建 github repository，起一个好看网址名。<br>
+                    2. 利用 Gemini 3.1 Pro Canvas 设计网站，Prompt: 我想要用 github pages 做一个个人博客，我已经创建了一个 repository，我希望博客的设计风格是这样的：（按自己喜欢的设计风格形容填写），所有页面保持一样的风格。要有一个主页可以预览日期历程，内容开头，点击阅读全文时可以进到另一页，而不是在同一页阅览。以及，我希望能在github 里把每个文章分在不同的文件夹里，方便书写。请帮我把他们全都分开好，并连着file的创建步骤，一起打包给我。<br>
+                    3. Gemini 推荐结构：<br>
+                        justwrite-1013.github.io/<br>
+                        │<br>
+                        ├── index.html           (主页：文章列表)<br>
+                        ├── style.css            (存放共用的水彩背景和样式，这样所有页面都能保持一致的风格)<br>
+                        │<br>
+                        ├── posts/               (你可以建一个文件夹专门放文章)<br>
+                        │   ├── hello-world/<br>
+                        │   │   └── index.html   (测试文章的内容)<br>
+                        │   │<br>
+                        │   ├── first-post/<br>
+                        │   │   └── index.html   (第一篇文章的内容)<br>
+                        │   │<br>
+                        │   └── second-post/<br>
+                        │       └── index.html   (第二篇文章的内容)<br>
+                    4. 创建样式文件：在仓库主页，点击绿色的 Add file 按钮，选择 Create new file。在文件名的输入框中输入：style.css，将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。<br>
+                    5. 创建主页：回到仓库，Add file -> Create new file，文件名：index.html，将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。<br>
                     6. 创建文章详情页：回到仓库主页，点击 Add file -> Create new file。在文件名的输入框中，依次输入：posts/，然后输入hello-world/，最后输入 index.html（GitHub 会自动将路径折叠为文件夹结构）。最终顶部显示的文件路径应为：posts/hello-world/index.html。将 Gemini 写的代码粘贴到编辑区域，点击 Commit changes... 保存。
                 </p>
                 <p>
