@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.07.20 | 一些反思</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- 引入根目录的独立样式文件，使用 ../../ 回退两级目录 -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="antialiased min-h-screen flex flex-col relative">
+
+    <div class="watercolor-bg"></div>
+
+    <!-- 顶部导航栏，带返回主页按钮 -->
+    <nav class="pt-8 pb-4 container mx-auto px-4 md:px-8 max-w-5xl relative z-10 flex justify-between items-center">
+        <!-- 链接回主页 -->
+        <a href="../../index.html" class="text-gray-500 hover:text-gray-700 transition-colors flex items-center text-sm tracking-wider">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            返回主页
+        </a>
+    </nav>
+
+    <!-- 文章正文区 -->
+    <main class="flex-grow container mx-auto px-4 md:px-8 max-w-5xl relative z-10 pb-20">
+        
+        <article class="glass-card p-8 md:p-12 relative mt-4">
+            
+            <header class="mb-10 text-center border-b border-gray-200/50 pb-8">
+                <h1 class="text-3xl md:text-4xl font-medium mb-4 text-gray-800 leading-tight">一些反思</h1>
+                <div class="text-sm text-gray-500 flex justify-center items-center gap-4 tracking-widest">
+                    <span>2026.07.20</span>
+                    <span>·</span>
+                    <span>随笔</span>
+                </div>
+            </header>
+            
+            <!-- 文章内容 -->
+            <div class="article-content text-gray-700 font-light text-justify text-base md:text-lg">
+               <p>随着 AI 模型的不断更新，GPT 能够攻破的数学难题越来越多，速度也越来越快。尤其在推进近似比的方面的题，大家争先恐后地在 arXiv 上发布自己如何利用 GPT 改进了上下界。许多科研人员已经开始高度依赖 AI：每天的日常就是把几个题目抛给 GPT 去构思，自己则退居幕后，等待 AI 产出思路后再进行人工或模型验证。前两天，那个沉寂了八百年的 CS Theory 微信群突然炸开了锅，大家都在倾诉对科研未来的担忧。</p>
+            <p>我也用着相同的焦虑。明明最初选择科研，只是想踏踏实实地学习，慢条斯理地解题。但 GPT Pro 的出现如同按下了加速键，每当听到别人用 AI 又刷出了新结果，我也会紧跟着“鞭打” GPT 去推进自己的课题。效果确实立竿见影，最近我甚至靠着它推出了卡了两年的题，我也能完全看懂它的解题思路。但奇怪的是，做出来后我并没有想象中开心，那种成就感，以及对证明思路的刻骨铭心，甚至比不上本科时自己亲手推导出 n=2 简单情形时的万分之一。</p>
+            <p>除此之外，我还有一种荒谬的感觉：科研做得越多，脑子里的知识反而越少。每天从 GPT 那里快速打包获取各种解题工具和论文解析，就像是期末考试前一周疯狂突击一个模块，高效却不留痕迹。我开始意识到，我的 PhD 不能这样读下去。尽管周围的声音都在催促着“赶紧出结果，赶紧挂 arXiv”，尽管我也并非天赋异禀的做题家，但我宁愿接受别人抢先用 GPT 穷尽能做的课题，也无法接受自己在毕业时，发现只是混了一个水博。</p>
+            <p>最近偶然刷到一篇关于最有可能获得菲尔兹奖的王虹的帖子，讲述了她在北大数院的成长经历。她打破了人们对数学大神的刻板印象：并非竞赛出身，最初甚至不是数学系的学生。转入数院后，她曾一度怀疑自己不适合数学而转攻建筑，但兜兜转转后最终又回到了数学的怀抱。她的经历让我重新审视了做数学原本的模样——数学的至美，是必须要经过漫长的磨合、自我怀疑与反复尝试才能真正体悟的。AI 可以轻易压缩这个过程，但人类的认知规律却不允许。没有经过时间沉淀与思维淬炼的知识，是无法让人类完整吸收的，至少我深信如此。</p>
+            <p>因此，我决定停下追赶机器的脚步，找回自己的节奏。慢慢地学，慢慢地做，把那些真正属于我的知识，不可磨灭地烙印在大脑里。哪怕这条路的尽头只是一场平凡的毕业，至少当我回望这四年，可以坦荡地说：我未曾辜负科研，亦未曾辜负自己。</p>
+            </div>
+            
+        </article>
+    </main>
+
+    <footer class="py-6 text-center text-xs text-gray-400 relative z-10 mt-auto">
+        <p>© 2026 Justwrite. 眼中有爱，看什么都浪漫。</p>
+    </footer>
+
+</body>
+</html>
